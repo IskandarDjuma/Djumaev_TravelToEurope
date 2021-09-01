@@ -1,0 +1,72 @@
+.card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+
+  @include above($tablet-width) {
+    grid-template-columns: repeat(2, minmax(288px, 1fr));
+    gap: 40px;
+  }
+
+ @include above($desktop-width) {
+   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+   gap: 100px 60px;
+ }
+}
+
+.card__item {
+  position: relative;
+  overflow: hidden;
+
+  .card__backside-link {
+    @include font-size(14px, 17px, 500);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px 25px;
+    color: $basic-white;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid $basic-white;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.8, -0.4, 0.2, 0.7);
+    width: 266px;
+  }
+
+  .card__img {
+    transition: all 0.4s cubic-bezier(0.8, -0.4, 0.2, 0.7);
+  }
+
+  &:hover {
+    .card__img,
+    .card__title {
+      filter: brightness(0.4);
+    }
+    .card__backside-link {
+      opacity: 1;
+    }
+  }
+}
+
+.card__backside {
+  margin: 0;
+}
+
+.card__title {
+  @include font-size(24px, 29px, 500);
+  color: $basic-dark-blue;
+  background-color: $basic-white;
+  padding: 16px 48px 9px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.8, -0.4, 0.2, 0.7);
+
+  @include above($desktop-width) {
+    top: 90%;
+  }
+}

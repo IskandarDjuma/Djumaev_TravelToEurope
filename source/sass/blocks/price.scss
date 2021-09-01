@@ -1,0 +1,62 @@
+.price {
+  @include above($desktop-width) {
+    margin-bottom: 140px;
+  }
+}
+.price__list {
+  @include list-reset;
+
+  @include above($desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 30px;
+  }
+}
+
+.price__contacts {
+  margin: 0;
+  @include above($desktop-width) {
+    @include font-size(22px, 24px, 500);
+    color: $basic-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+  }
+}
+
+.price__headline {
+  margin: 0;
+}
+
+.price__subtitle {
+  margin: 0;
+
+  @include above($desktop-width) {
+    width: 250px;
+    padding-bottom: 60px;
+  }
+}
+
+.price__tel {
+   position: relative;
+   @include above($desktop-width) {
+     @include font-size(20px, 32px, 400);
+     color: $basic-black;
+
+     &::before {
+       content: "";
+       position: absolute;
+       background-image: url("../img/phone-red.svg");
+       top: 18%;
+       transform: translateX(-152%);
+       width: 28px;
+       height: 28px;
+     }
+   }
+ }
+
+.price__item--last{
+  order: 2;
+}

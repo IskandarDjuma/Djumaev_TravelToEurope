@@ -1,0 +1,87 @@
+.feedback {
+  position: relative;
+  @include above($desktop-width) {
+    min-height: 500px;
+    background-image: url("../img/form-bg@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% -9px;
+    background-size: 844px 455px;
+  }
+}
+
+.feedback__wrap {
+  @include above($desktop-width) {
+    width: 656px;
+    padding: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: $basic-white;
+  }
+}
+
+.feedback__headline {
+  color: $basic-dark;
+  margin: 0;
+
+  @include above($desktop-width) {
+    @include font-size(25px, 32px, 600);
+    padding-bottom: 11px;
+    text-align: center;
+    color: $basic-dark;
+  }
+}
+
+.feedback__subtitle {
+  margin: 0;
+  text-align: center;
+
+  @include above($desktop-width) {
+    padding-bottom: 24px;
+  }
+}
+
+.feedback__list {
+  @include list-reset;
+
+  @include above($desktop-width) {
+    display: flex;
+  }
+}
+
+.feedback__item {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.feedback__input {
+  @include font-size (14px, 17px, 400);
+  padding: 16px;
+  width: 270px;
+  border: 1px solid $basic-dark-blue-30;
+  outline: none;
+
+  &:hover {
+    border-color: $accent-hover-color;
+  }
+
+  &:focus {
+    border-color: $accent-color;
+    box-shadow: inset 0 0 0 1px $basic-dark-blue;
+  }
+
+  &::placeholder {
+    @include font-size (14px, 18px, 400);
+    font-family: $primary-text;
+    color: $basic-black;
+    opacity: 1;
+  }
+}
+
+.feedback__button {
+  letter-spacing: 2px;
+  margin-left: 206px;
+  text-transform: uppercase;
+  outline: none;
+}

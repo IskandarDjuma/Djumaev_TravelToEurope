@@ -1,0 +1,23 @@
+.section-headline {
+  @include font-size (24px, 36px, 600);
+  color: $basic-dark;
+
+  @include above($tablet-width){
+    @include font-size (30px, 45px, 600);
+  }
+
+  @include above($desktop-width) {
+    @include font-size (55px, 80px, 600);
+    padding-bottom: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 230px;
+      height: 4px;
+      background-color: $accent-color;
+    }
+  }
+}

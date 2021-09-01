@@ -1,0 +1,54 @@
+
+.places {
+  margin-bottom: 20px;
+
+  @include above($tablet-width) {
+    margin-bottom: 95px;
+  }
+
+  @include above($desktop-width) {
+    background-image: url("../bg-map.png/");
+    background-repeat: no-repeat;
+    background-position: 50% -9px;
+    background-size: cover;
+    margin-bottom: 125px;
+  }
+}
+
+.places__headline {
+  position: relative;
+  margin: 0;
+  text-align: center;
+
+  @include above ($tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @include above ($desktop-width) {
+    text-align: left;
+    width: 358px;
+  }
+}
+
+.places__subtitle {
+  @include font-size(16px, 28px, 400);
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include above($tablet-width) {
+    margin-bottom: 40px;
+    width: 350px;
+  }
+
+  @include above($desktop-width) {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.places__card {
+  @include list-reset;
+}

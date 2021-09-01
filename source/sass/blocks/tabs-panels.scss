@@ -1,0 +1,96 @@
+.tabs-panels {
+  @include list-reset;
+  position: relative;
+}
+
+.tabs-panels__heading {
+  position: relative;
+  margin: 0;
+
+  @include above($tablet-width) {
+   text-align: center;
+  }
+
+  @include above($desktop-width) {
+    text-align: left;
+  }
+}
+
+.tabs-panels__text {
+  @include above($tablet-width) {
+    text-align: center;
+  }
+
+  @include above($desktop-width) {
+    width: 370px;
+    text-align: left;
+  }
+}
+
+.tabs-panels__button {
+  @include above ($tablet-width) {
+    @include font-size(10px,12px,500);
+    letter-spacing: 2px;
+    margin-left: 35%;
+  }
+
+  @include above ($desktop-width) {
+    font-weight: 700;
+    margin-left: 0;
+  }
+}
+
+.tabs-panels__item {
+  display: flex;
+  flex-direction: column;
+
+  &--active {
+    display: block;
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.tabs-panels__wrap {
+  @include above($desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 430px));
+  }
+}
+
+.tabs-panels__img {
+  background-color: $basic-light;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+
+  &--greece {
+    background-image: url("../img/greece@1x.jpg");
+
+    @include above($tablet-width) {
+      background-image: url("../img/greece-tablet@1x.jpg");
+    }
+  }
+
+  &--albania {
+   background-image: url("../img/albania@1x.jpg");
+  }
+
+  &--makedonia {
+    background-image: url("../img/makedonia@1x.jpg");
+  }
+
+  &--montenegro{
+    background-image: url("../img/montenegro@1x.jpg");
+  }
+
+  &--croatia{
+  background-image: url("../img/croatia@1x.jpg");
+  }
+}
+
+
+
+

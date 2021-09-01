@@ -1,0 +1,20 @@
+.next-traveling__headline {
+  @include font-size(18px, 32px, 600);
+  color: $basic-black;
+}
+
+.next-traveling__list {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 8px 33px;
+}
+
+.next-traveling__link {
+  @include font-size(14px, 17px, 400);
+  color: $basic-dark-blue-30;
+
+  &:hover {
+    color: $accent-hover-color;
+  }
+}

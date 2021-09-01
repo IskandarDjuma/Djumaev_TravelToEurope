@@ -1,0 +1,51 @@
+.main-nav {
+  position: relative;
+  width: 100%;
+  // min-height: 42px;
+
+  @include below($tablet-width-only) {
+    &--closed {
+      display: none;
+    }
+
+    &--opened {
+      display: block;
+    }
+  }
+
+  @include above($desktop-width) {
+    width: 50%;
+  }
+}
+
+.main-nav--opened {
+  .main-nav__wrapper {
+    height: 568px;
+
+    @include above($tablet-width) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      min-height: 80vh;
+      background-color: $basic-white;
+    }
+
+    @include above($desktop-width) {
+      min-height: 0;
+      background-color: inherit;
+    }
+  }
+}
+
+.main-nav--nojs {
+  display: block;
+
+  .main-nav__list {
+    display: block;
+  }
+}
+
+.main-nav__list {
+  @include list-reset;
+}

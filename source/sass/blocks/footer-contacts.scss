@@ -1,0 +1,17 @@
+.footer-contacts__list {
+  @include list-reset;
+}
+
+.footer-contacts__headline {
+  @include font-size(18px, 32px, 600);
+  color: $basic-black;
+}
+
+.footer-contacts__link {
+  @include font-size(14px, 17px, 400);
+  color: $accent-color;
+}
+
+.footer-contacts__phone {
+  @include font-size(16px, 17px, 400);
+}

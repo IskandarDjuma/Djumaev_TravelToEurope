@@ -1,0 +1,84 @@
+.site-list {
+  padding-top: 130px;
+
+  @include above ($desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    width: 500px;
+    padding-top: 0;
+  }
+}
+
+.site-list__link {
+  @include font-size (20px, 28px, 600);
+  color: $basic-dark-grey;
+  position: relative;
+  display: block;
+  background-color: $basic-light;
+  width: 320px;
+  height: 60px;
+  padding: 16px 0 10px 30px;
+
+  @include above ($desktop-width) {
+    @include font-size (14px, 18px, 500);
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    color: $basic-dark;
+    width: inherit;
+    height: inherit;
+    padding: 0;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:active {
+      color: $accent-hover-color;
+    }
+
+    &--phone {
+      @include font-size (18px, 21px, 500);
+    }
+  }
+}
+
+.site-list__link:hover {
+  @include above ($desktop-width) {
+    .site-list__link-icon path {
+      stroke: $accent-color;
+    }
+  }
+}
+
+.site-list__link:active {
+  @include above ($desktop-width) {
+    .site-list__link-icon path {
+      stroke: $accent-hover-color;
+    }
+  }
+}
+
+.site-list__item {
+  flex: 1 1 auto;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--phone {
+    display: none;
+  }
+
+  @include above ($desktop-width) {
+    margin-bottom: 0;
+
+    &--phone {
+      display: block;
+      text-decoration-line: underline;
+    }
+  }
+}
